@@ -26,4 +26,7 @@ class Team
     end
     found_team
   end
+  define_method(:add_member) do |member|
+    @members.push(member)
+  end
 end
