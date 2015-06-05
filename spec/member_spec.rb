@@ -4,6 +4,9 @@ require('member')
 require('team')
 
 describe(Member) do
+  before() do
+    Member.clear()
+  end
   describe('.all') do
     it('is empty at first') do
       expect(Member.all()).to(eq([]))
@@ -22,5 +25,5 @@ describe(Member) do
       Member.clear()
       expect(Member.all()).to(eq([]))
     end
-  end    
+  end
 end

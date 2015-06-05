@@ -4,6 +4,9 @@ require('team')
 require('member')
 
 describe(Team) do
+  before() do
+    Team.clear()
+  end
   describe('.all') do
     it('is empty at first') do
       expect(Team.all()).to(eq([]))
@@ -21,6 +24,15 @@ describe(Team) do
       Team.new({:name => 'blazers'}).save()
       Team.clear()
       expect(Team.all()).to(eq([]))
+    end
+  end
+  describe('.find') do
+    it('returns a team by its id') do
+      test_team = Team.new({:name => 'blazers'})
+      test_team.save()
+      test_team2 = Team.new({:name => 'tigers'})
+      test_team2.save()
+      expect(Team.find(1)).to(eq(test_team))
     end
   end
 end
