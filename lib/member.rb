@@ -1,5 +1,5 @@
 class Member
-  attr_reader(:name, :id)
+  attr_reader(:name, :id, :teams)
 
   @@members = []
 
@@ -16,5 +16,14 @@ class Member
   end
   define_singleton_method(:clear) do
     @@members = []
+  end
+  define_singleton_method(:find) do |id|
+    found_member = nil
+    @@members.each() do |member|
+      if member.id() == (id)
+        found_member = member
+      end
+    end
+    found_member
   end
 end

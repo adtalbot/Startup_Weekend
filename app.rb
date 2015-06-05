@@ -27,12 +27,6 @@ get('/teams/:id/members/new') do
   erb(:team_member_form)
 end
 
-get('/members/:id') do
-  @member = Member.find(params.fetch('id').to_i())
-  @members = Member.all()
-  erb(:member)
-end
-
 post('/members') do
   member_name = params.fetch('member_name')
   @member = Member.new({:name => member_name})

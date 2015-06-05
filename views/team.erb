@@ -5,7 +5,7 @@
 <div class='container'>
   <ul>
     <% @team.members().each() do |member| %>
-      <li><a href='/members/<%= member.id() %>'><%= member.name() %></a></li>
+      <li><%= member.name() %></li>
     <% end %>
   </ul>
 </div>
