@@ -10,4 +10,7 @@ class Member
   define_singleton_method(:all) do
     @@members
   end
+  define_method(:save) do
+    @@members.push(self)
+  end
 end
