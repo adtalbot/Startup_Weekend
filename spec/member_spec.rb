@@ -16,4 +16,11 @@ describe(Member) do
       expect(Member.all()).to(eq([test_member]))
     end
   end
+  describe('.clear') do
+    it('clears out the array of saved members') do
+      Member.new({:name => 'bob'}).save()
+      Member.clear()
+      expect(Member.all()).to(eq([]))
+    end
+  end    
 end

@@ -13,4 +13,7 @@ class Member
   define_method(:save) do
     @@members.push(self)
   end
+  define_singleton_method(:clear) do
+    @@members = []
+  end
 end
