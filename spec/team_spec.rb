@@ -16,4 +16,11 @@ describe(Team) do
       expect(Team.all()).to(eq([test_team]))
     end
   end
+  describe('.clear') do
+    it('clears thet array of saved teams') do
+      Team.new({:name => 'blazers'}).save()
+      Team.clear()
+      expect(Team.all()).to(eq([]))
+    end
+  end
 end
