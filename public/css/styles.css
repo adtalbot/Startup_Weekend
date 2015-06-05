@@ -1,0 +1,28 @@
+body {
+  background: grey;
+}
+
+section.content {
+  background: #10a1ff;
+  border-radius: 10px 10px 10px 10px;
+  padding: 1em 2em;
+  width: 80%;
+}
+
+section.main h1 {
+  text-align: center;
+}
+
+section.main {
+  background: #10a1ff;
+  margin: 2em auto;
+  border-raduis: 10px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
