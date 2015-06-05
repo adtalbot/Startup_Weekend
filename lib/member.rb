@@ -1,10 +1,11 @@
 class Member
-  attr_reader(:name)
+  attr_reader(:name, :id)
 
   @@members = []
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
+    @id = @@members.length.+(1)
     @teams = []
   end
   define_singleton_method(:all) do

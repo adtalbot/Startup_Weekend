@@ -1,0 +1,10 @@
+<p>Add a member to this team:</p>
+
+<form action='/members' method='post'>
+  <input id='id' name='id' type='hidden' value='<%= @team.id() %>'>
+
+  <label for='member_name'>Member Name:</label>
+  <input id='member_name' name='member_name' type='text'>
+
+  <button type='submit'>Add Member</button>
+</form>

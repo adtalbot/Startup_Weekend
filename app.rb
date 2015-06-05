@@ -15,3 +15,29 @@ post('/') do
   team.save()
   erb(:success)
 end
+
+get('/teams/:id') do
+  @team = Team.find(params.fetch('id').to_i())
+  @teams = Team.all()
+  erb(:team)
+end
+
+get('/teams/:id/members/new') do
+  @team = Team.find(params.fetch('id').to_i())
+  erb(:team_member_form)
+end
+
+get('/members/:id') do
+  @member = Member.find(params.fetch('id').to_i())
+  @members = Member.all()
+  erb(:member)
+end
+
+post('/members') do
+  member_name = params.fetch('member_name')
+  @member = Member.new({:name => member_name})
+  @member.save()
+  @team = Team.find(params.fetch('id').to_i())
+  @team.add_member(@member)
+  erb(:success)
+end
