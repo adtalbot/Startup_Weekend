@@ -4,11 +4,14 @@ class Team
   @@teams = []
 
   define_method(:initialize) do |attributes|
-    @name = params.fetch(:name)
-    @id = @teams.length().+(1)
+    @name = attributes.fetch(:name)
+    @id = @@teams.length().+(1)
     @members = []
   end
   define_singleton_method(:all) do
     @@teams
+  end
+  define_method(:save) do
+    @@teams.push(self)
   end
 end
